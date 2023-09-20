@@ -1,7 +1,7 @@
 # Use gcc instead of clang
 # As of 17.0.1/clang 13, we get compile time crashes
 %bcond_without gcc
-%bcond_with system_jdk
+%bcond_without system_jdk
 # Without bootstrap, the package BuildRequires
 # rpm-javamacros (which in turn requires this package)
 # so jmod(*) and java(*) Provides: can be generated correctly.
@@ -22,7 +22,7 @@
 %define major %(echo %{version} |cut -d. -f1)
 %define minor %(echo %{version} |cut -d. -f2-3)
 %define ver %(echo %{version} |rev |cut -d. -f2- |rev)
-%define subminor 33
+%define subminor 35
 #define is_head 1
 #For non-GA releases: %(echo %{version} |rev |cut -d. -f1 |rev)
 # OpenJDK X requires OpenJDK >= X-1 to build -- so we need
@@ -33,7 +33,7 @@
 
 Name:		java-21-openjdk
 Version:	21.0.0.%{subminor}
-Release:	2
+Release:	1
 Summary:	Java Runtime Environment (JRE) %{major}
 Group:		Development/Languages
 License:	GPLv2, ASL 1.1, ASL 2.0, LGPLv2.1

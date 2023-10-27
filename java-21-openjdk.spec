@@ -156,8 +156,8 @@ Group:		Development/Languages
 %if %{with system_jdk}
 Provides:	jdk-current = %{EVRD}
 Provides:	java-current-devel = %{EVRD}
-%endif
 Requires:	rpm-javamacros
+%endif
 Requires:	%{name} = %{EVRD}
 Suggests:	%{name}-gui = %{EVRD}
 # For compatibility with JPackage/Fedora/Mageia packaging

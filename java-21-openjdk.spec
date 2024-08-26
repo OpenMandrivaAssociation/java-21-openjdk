@@ -1,6 +1,4 @@
-# Use gcc instead of clang
-# As of 17.0.1/clang 13, we get compile time crashes
-%bcond_without gcc
+%bcond_with gcc
 %bcond_without system_jdk
 # Without bootstrap, the package BuildRequires
 # rpm-javamacros (which in turn requires this package)
@@ -48,6 +46,7 @@ Patch1:		https://src.fedoraproject.org/rpms/java-openjdk/raw/master/f/rh1648242-
 Patch2:		https://src.fedoraproject.org/rpms/java-openjdk/raw/master/f/rh1648644-java_access_bridge_privileged_security.patch
 Patch3:		https://src.fedoraproject.org/rpms/java-openjdk/raw/master/f/rh649512-remove_uses_of_far_in_jpeg_libjpeg_turbo_1_4_compat_for_jdk10_and_up.patch
 # Patches from OpenMandriva
+Patch1001:	openjdk-21-clang.patch
 Patch1002:	java-12-compile.patch
 Patch1003:	openjdk-15-nss-3.57.patch
 #Patch1005:	openjdk-13-fix-build.patch

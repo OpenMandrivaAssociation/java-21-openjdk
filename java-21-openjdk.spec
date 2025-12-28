@@ -20,7 +20,7 @@
 %define major %(echo %{version} |cut -d. -f1)
 %define minor %(echo %{version} |cut -d. -f2-3)
 %define ver %(echo %{version} |rev |cut -d. -f2- |rev)
-%define subminor 4
+%define subminor 6
 #define is_head 1
 #For non-GA releases: %(echo %{version} |rev |cut -d. -f1 |rev)
 # OpenJDK X requires OpenJDK >= X-1 to build -- so we need
@@ -30,7 +30,7 @@
 %define vercode %(if [ "%{minor}" = "0.0" ]; then echo -n %{major}; else echo -n %{ver}; fi)
 
 Name:		java-21-openjdk
-Version:	21.0.5.%{subminor}
+Version:	21.0.10.%{subminor}
 Release:	1
 Summary:	Java Runtime Environment (JRE) %{major}
 Group:		Development/Languages
